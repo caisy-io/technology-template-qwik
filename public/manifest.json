@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "name": "Techipsum",
+  "short_name": "Techipsum",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "Techipsum - advanced tech"
+}

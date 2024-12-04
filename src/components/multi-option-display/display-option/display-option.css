@@ -1,0 +1,34 @@
+input:checked + .option-label .option-title:before {
+  opacity: 1;
+}
+input:checked + .option-label .option-title {
+  p {
+    color: rgb(255 255 255);
+  }
+  svg path {
+    fill: rgb(255 255 255);
+  }
+}
+input:checked + .option-label + .option-content {
+  display: block;
+
+  .option-strap {
+    @apply motion-preset-blur-up motion-duration-[800ms];
+  }
+
+  .option-title {
+    @apply motion-preset-blur-left motion-duration-[800ms] motion-delay-[200ms];
+  }
+
+  .option-text {
+    @apply motion-preset-blur-left motion-duration-[800ms] motion-delay-[400ms];
+  }
+
+  .option-image {
+    @apply motion-preset-fade-lg motion-duration-[2s];
+  }
+
+  .option-button {
+    @apply motion-preset-blur-left motion-duration-[800ms] motion-delay-[400ms];
+  }
+}
