@@ -119,7 +119,11 @@ export const Navigation = component$<NavigationProps>(({ items, id }) => {
                         </a>
                         <ul
                             {...getInspectProps({ id, fieldName: "items" })}
-                            class="relative z-20 flex w-full list-none flex-col gold:flex-row gold:items-center gold:justify-end gold:gap-5"
+                            class={cn(
+                                "relative z-20 flex w-full list-none flex-col gold:flex-row gold:items-center gold:justify-end gold:gap-5",
+                                "mt-[22px] max-h-[calc(100vh-155px)] overflow-auto pt-0",
+                                "overflow-visible gold:mt-0 gold:pt-0",
+                            )}
                         >
                             {items?.map(async (item, index) => {
                                 if (item?.__typename === "Page" && index + 1 === items.length) {
@@ -136,8 +140,13 @@ export const Navigation = component$<NavigationProps>(({ items, id }) => {
                                                 <div class="hidden gold:block">
                                                     <Button type="primary" label={item?.name} />
                                                 </div>
-                                                <div class="flex w-min items-center justify-center gap-2 bg-white px-4 py-2 silver:hidden">
-                                                    {link.name}
+                                                <div
+                                                    class={cn(
+                                                        "pb-4 text-sm font-medium leading-5 text-white gold:font-normal",
+                                                        "silver:hidden",
+                                                    )}
+                                                >
+                                                    {item?.name}
                                                 </div>
                                             </a>
                                         </li>
